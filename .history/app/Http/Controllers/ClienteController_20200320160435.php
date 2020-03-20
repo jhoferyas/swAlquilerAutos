@@ -49,18 +49,17 @@ class ClienteController extends BaseController{
     $cliente = Cliente::where('cedula',$request -> cedula) -> first();
     $cliente = new Cliente();
     if($cliente != null){
-      $cliente->cedula = $request->cedula;
-      $cliente->nombre = $request->nombre;
-      $cliente->Apellido = $request->Apellido;
-      $cliente->telefono = $request->telefono;
-      $cliente->direccion = $request->direccion;
-      $cliente->save();
-      $info = "Agregado con Exito";
-      $status = 200;
+        $info = "La Cedula ya existe en la BD";
+        $status = 400;
     }else{
-        
-      $info = "La Cedula ya existe en la BD";
-      $status = 400;
+        $cliente->cedula = $request->cedula;
+        $cliente->nombre = $request->nombre;
+        $cliente->Apellido = $request->Apellido;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->save();
+        $info = "Agregado con Exito";
+        $status = 200;
     }
 
     return ResponseBuilder::result($status, $info, $cliente);

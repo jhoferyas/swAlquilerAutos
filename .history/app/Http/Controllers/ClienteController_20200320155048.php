@@ -45,27 +45,51 @@ class ClienteController extends BaseController{
   }*/
 
 
-  public function nuevocliente(Request $request){
-    $cliente = Cliente::where('cedula',$request -> cedula) -> first();
-    $cliente = new Cliente();
-    if($cliente != null){
-      $cliente->cedula = $request->cedula;
-      $cliente->nombre = $request->nombre;
-      $cliente->Apellido = $request->Apellido;
-      $cliente->telefono = $request->telefono;
-      $cliente->direccion = $request->direccion;
-      $cliente->save();
-      $info = "Agregado con Exito";
-      $status = 200;
-    }else{
+
+
+
+  
         
-      $info = "La Cedula ya existe en la BD";
-      $status = 400;
+}
+
+
+
+/*public function guardarCliente(Request $request){
+    if($request->json()){
+        $cliente = Cliente::insert('cedula',$request->cedula) ->get();
+
+        $status = 200;
+        $info = "No se que hace :cx2";
+        $cliente = new Cliente();
+        //$cliente->cedula = $request->cedula;
+        $cliente->nombre = $request->nombre;
+        $cliente->Apellido = $request->Apellido;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->save();
+
+      }else{
+        $status = false;
+        $info = "No se que hace :c";
+      }
+
+
+        return ResponseBuilder::result($status, $info, $cliente);
+
+
+    }else{
+      $status = false;
+      $info = "Unauthorized";
     }
 
-    return ResponseBuilder::result($status, $info, $cliente);
+      return ResponseBuilder::result($status, $info);
 
-    
-  }
+    }*/
+
+
+
+
+
+
 
 }

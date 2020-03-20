@@ -16,5 +16,12 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/clientes','ClienteController@verCliente');
-$router->Post('/agregarcliente','ClienteController@nuevocliente');
 
+
+
+
+//$router->post('/registroCliente','ClienteController@guardarCliente');
+
+$router->group(['prefix' => 'clientes'], function($router){
+  $router->get('cliente/{cedula}', 'ClienteController@getCliente');
+});

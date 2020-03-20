@@ -22,7 +22,7 @@ class UserController extends BaseController
 
             if ($this->django_password_verify($password, $user->password)) {
                 $status = true;
-                $info = "¡¡Has Iniciado Sesion!!";
+                $info = "¡¡Has Inisiado Sesion!!";
                 return ResponseBuilder::result($status, $info,$user);
             } else {
                 $status = false;
