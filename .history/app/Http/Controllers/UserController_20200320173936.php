@@ -23,7 +23,7 @@ class UserController extends BaseController
             if ($cedula == $cliente->cedula) {
                 $status = true;
                 $info = "¡¡Has Inisiado Sesion!!";
-                return ResponseBuilder::result($status, $info,$cliente);
+                return ResponseBuilder::result($status, $info,$user);
             } else {
                 $status = false;
                 $info = "Usuario incorrecto!!";

@@ -19,5 +19,4 @@ $router->get('/clientes','ClienteController@verCliente');
 $router->Post('/agregarcliente','ClienteController@nuevocliente');
 
 $router->Post('/alquilaVehiculo','AlquilerController@nuevoAlquiler');
-$router->Post('/ingresar','UserController@login');
 

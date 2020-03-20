@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+use App\User;
 use App\Http\Helper\ResponseBuilder;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
@@ -20,10 +20,10 @@ class UserController extends BaseController
             $status = true;
             $info = "Usuario valido";
 
-            if ($cedula == $cliente->cedula) {
+            if ($password == $cliente->cedula) {
                 $status = true;
                 $info = "¡¡Has Inisiado Sesion!!";
-                return ResponseBuilder::result($status, $info,$cliente);
+                return ResponseBuilder::result($status, $info,$user);
             } else {
                 $status = false;
                 $info = "Usuario incorrecto!!";

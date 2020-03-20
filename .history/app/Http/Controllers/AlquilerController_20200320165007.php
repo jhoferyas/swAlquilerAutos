@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+use App\Alquiler;
 use App\Http\Helper\ResponseBuilder;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
